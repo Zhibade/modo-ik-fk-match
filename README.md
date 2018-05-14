@@ -25,3 +25,5 @@ their channels
 - Clicking on those buttons will enable the corresponding controls and match them to the current position
 - If you wish to move these buttons, you can do so by using the *Form Editor* and moving the
 button controls under the *zbIkFkMatch* group, and removing them from the *Animate Coords* tail category
+
+Please refer to the included sample scene to see how it was set up and how the naming and keywords match the scripts
