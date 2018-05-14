@@ -6,6 +6,7 @@ import modo
 
 # Constants
 
+WORLD_POS_MATRIX_CHANNEL = "wposMatrix"
 WORLD_ROT_MATRIX_CHANNEL = "wrotMatrix"
 
 # API
@@ -27,6 +28,30 @@ def get_item(name):
     return item
   except:
     show_warning("No item found with the name: " + name)
+
+
+def match_translation(source, target):
+  """
+  Matches the translation from source to target
+
+  Params:
+    source :: MODO item - Source item
+    target :: MODO item - Target item
+  """
+
+  source_item = get_item(source)
+  target_item = get_item(target)
+
+  # Reset TARGET position to get Position Zero values, and then 
+  # negate the translation from the SOURCE world position matrix
+  target_item.position.set((0,0,0))
+
+  target_zero_pos = modo.Matrix4(target_item.channel(WORLD_POS_MATRIX_CHANNEL).get())
+  source_pos = modo.Matrix4(source_item.channel(WORLD_POS_MATRIX_CHANNEL).get())
+
+  final_pos = source_pos * target_zero_pos.inverted()
+
+  target_item.position.set(final_pos.position)
 
 
 def match_rotation(source, target):

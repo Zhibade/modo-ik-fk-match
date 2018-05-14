@@ -6,11 +6,11 @@ The script will match the controls to the corresponding target and hide/show
 the appropriate controls. It will also automatically adjust the constraints
 to use the corresponding mode (FK or IK).
 
-NOTE: It only works with the standard 3 joint chain setup (one for FK, one for IK and one for binding to the mesh)
+**NOTE:** It only works with the standard 3 joint chain setup (one for FK, one for IK and one for binding to the mesh)
 It won't work with the default MODO IK/FK blending.
 
-NOTE: This is intended mostly as a template for more specific or advanced IK/FK matching, not as a catch-all solution.
-You will need to adjust the scripts to match your needs (more info on the *How to Install* section)
+**NOTE:** This is intended mostly as a template for more specific or advanced IK/FK matching, not as a catch-all solution.
+You will need to adjust the scripts to suit your needs (more info on the *How to Install* section)
 
 ## How to Install
 - Clone/Download this repository
